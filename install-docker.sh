@@ -13,7 +13,7 @@ apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
-    software-properties-common
+    software-properties-common -y
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 apt-key fingerprint 0EBFCD88

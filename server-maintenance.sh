@@ -3,7 +3,7 @@
 while true; do
     read -p "Do you wish to install updates y/n?" yn
     case $yn in
-        [Yy]* ) apt update && apt upgrade -y; break;;
+        [Yy]* ) apt update && apt upgrade -y && apt autoremove; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac

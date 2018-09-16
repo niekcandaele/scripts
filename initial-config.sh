@@ -16,10 +16,10 @@ hostname() {
 
  DIR="$(cd "$(dirname "$0")" && pwd)"
 
-read -p "Do you wish to install updates y/n? " -n 1 -r
+read -p "Do you wish to run server maintenance y/n? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-   apt update && apt upgrade -y
+   $DIR/server-maintenance.sh
 else 
     echo 
     echo "Skipping updates"
