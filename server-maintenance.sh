@@ -1,8 +1,13 @@
 #!/bin/bash
 
-echo -e "\e[31;43m***** UPDATING *****\e[0m"
-apt update \
-&& apt upgrade -y
+while true; do
+    read -p "Do you wish to install updates y/n?" yn
+    case $yn in
+        [Yy]* ) apt update && apt upgrade -y; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 # -Hostname information:
 echo -e "\e[31;43m***** HOSTNAME INFORMATION *****\e[0m"
